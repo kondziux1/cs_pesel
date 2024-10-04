@@ -4,7 +4,35 @@
     {
         static void Main(string[] args)
         {
+            int[] pesel = new int[10];
             Console.WriteLine("Hello, World!");
+            if (args.Length == 0)
+            {
+                Console.WriteLine("NO INPUT! RUNNING DRY!");
+                pesel = new int[] { 5, 5, 0, 3, 0, 1, 0, 1, 1, 9, 0 }; // 11, F, POPRAWNY
+            }
+            else
+            {
+                string cut = args[0];
+                pesel = cut.Select(c => c - '0').ToArray();//gpt shit
+            }
+            Console.WriteLine("KamilKadze.gov.pl Pesel Software starting!");
+            //RUN
+            char kebab = getGender(pesel);
+            bool hotdog = checkParrity(pesel);
+
+            Console.WriteLine("Płec kolegi to: " + kebab);
+
+            if (hotdog)
+            {
+                Console.WriteLine("Pesel kolegi jest poprawny");
+            }
+            else
+            {
+                Console.WriteLine("Pesel kolegi jest BŁĘDNY (właśnie jadą po ciebie aby wywieźć cię na ukraine)");
+            }
+
+            Console.WriteLine("Dziękujemy za używanie KamilKadze.gov.pl Pesel Software!!!");
         }
         static char getGender(int[] elvdigit)
         {
