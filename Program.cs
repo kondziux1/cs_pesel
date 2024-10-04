@@ -34,6 +34,8 @@
 
             Console.WriteLine("Dziękujemy za używanie KamilKadze.gov.pl Pesel Software!!!");
         }
+        // Przyjmuje array pesel-u
+        // Zwraca znak "M" w przypadku meżczyzny i "K" w przypadaku kobiety pobraną z peselu
         static char getGender(int[] elvdigit)
         {
             if (elvdigit[10] % 2 == 0)
@@ -45,6 +47,8 @@
                 return 'M';
             }
         }
+        // Przyjmuje array pesel-u
+        // Zwraca bulion czy pesel jest poprawny
         static bool checkParrity(int[] elvdigit)
         {
             int[] weights = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 }; //10
@@ -82,5 +86,6 @@
 
             return false;
         }
+
     }
 }
